@@ -19,6 +19,6 @@ for i in range(MAX_N):
 min_score = result[0]
 for score in result[1:]:
     if score.s < min_score.s:
-        mis_score = score
+        min_score = score
 
 print(min_score.c, min_score.s)
