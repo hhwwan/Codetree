@@ -1,21 +1,12 @@
 a, b, c = map(int, input().split())
 
-day, hour, mins = 11, 11, 11
-elapsed_mins = 0
+day = (a-11) * 1440
+hour = (b-11) * 60
+mins = c - 11
 
-while True:
-    if day == a and hour == b and mins == c:
-        break
+result = day + hour + mins
 
-    elapsed_mins += 1
-    mins += 1
-
-    if mins > 60:
-        hour += 1
-        mins = 1
-    
-    if hour > 23:
-        day += 1
-        hour = 0
-
-print(elapsed_mins)
+if result < 0:
+    print(-1)
+else:
+    print(result)
