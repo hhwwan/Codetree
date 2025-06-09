@@ -1,12 +1,12 @@
 n = int(input())
-answer = ''
+answer = []
 
 while True:
     if n == 1:
-        answer += '1'
+        answer.append(1)
         break
-    else:
-        answer += str(n % 2)
-        n //= 2
+    answer.append(n % 2)
+    n //= 2
 
-print(answer[::-1])
+for i in answer[::-1]:
+    print(i, end='')
