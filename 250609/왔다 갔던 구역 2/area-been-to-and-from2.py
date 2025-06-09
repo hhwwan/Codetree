@@ -8,8 +8,10 @@ for _ in range(n):
 
 # 충분히 넓은 선분 배열 (인덱스 범위 확보)
 MAX = 20001
-people = 10000
+offset = 10000
 answer = [0] * MAX
+
+people = offset
 
 for i in range(n):
     if dir[i] == 'L':
