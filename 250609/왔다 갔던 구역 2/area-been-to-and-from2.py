@@ -14,14 +14,14 @@ answer = [0] * MAX
 people = offset
 
 for i in range(n):
-    if dir[i] == 'L':
-        for _ in range(x[i]):
-            answer[people] += 1
+    for _ in range(x[i]):
+        # 이동 먼저
+        if dir[i] == 'L':
             people -= 1
-    elif dir[i] == 'R':
-        for _ in range(x[i]):
-            answer[people] += 1
+        elif dir[i] == 'R':
             people += 1
+
+        answer[people] += 1
 
 cnt = 0
 
