@@ -6,27 +6,41 @@ for _ in range(n):
     x.append(int(xi))
     dir.append(di)
 
-# 충분히 넓은 선분 배열 (인덱스 범위 확보)
-MAX = 20001
-offset = 10000
-answer = [0] * MAX
+MAX_R = 2000
+OFFSET = 1000
 
-people = offset
+current = 0
+start_positions = []
+end_positions = []
 
 for i in range(n):
-    for _ in range(x[i]):
-        # 이동 먼저
-        if dir[i] == 'L':
-            people -= 1
-        elif dir[i] == 'R':
-            people += 1
+    distance = x[i]
+    direction = dir[i]
 
-        answer[people] += 1
+    if direction == 'L':
+        start = current - distance
+        end = current
+        current -= distance
+    else:
+        start = current
+        end = current + distance
+        current += distance
 
-cnt = 0
+    start += OFFSET
+    end += OFFSET
 
-for k in answer:
-    if k >= 2:
-        cnt += 1
+    start_positions.append(start)
+    end_positions.append(end)
 
-print(cnt)
+checked = [0] * (MAX_R + 1)
+
+for i in range(n):
+    for pos in range(start_positions[i], end_positions[i]):
+        checked[pos] += 1
+
+result = 0
+for count in checked:
+    if count >= 2:
+        result += 1
+
+print(result)
