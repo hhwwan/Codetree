@@ -2,8 +2,8 @@ n = int(input())
 answer = []
 
 while True:
-    if n == 1:
-        answer.append(1)
+    if n < 2:
+        answer.append(n)
         break
     answer.append(n % 2)
     n //= 2
