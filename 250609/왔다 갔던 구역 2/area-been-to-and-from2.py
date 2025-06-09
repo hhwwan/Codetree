@@ -16,12 +16,12 @@ people = offset
 for i in range(n):
     if dir[i] == 'L':
         for _ in range(x[i]):
-            people -= 1
             answer[people] += 1
+            people -= 1
     elif dir[i] == 'R':
         for _ in range(x[i]):
-            people += 1
             answer[people] += 1
+            people += 1
 
 cnt = 0
 
