@@ -34,5 +34,4 @@ if min_x == 2001:
 else:
     height = max_y - min_y + 1
     width = max_x - min_x + 1
-
-print(height * width)
+    print(height * width)
