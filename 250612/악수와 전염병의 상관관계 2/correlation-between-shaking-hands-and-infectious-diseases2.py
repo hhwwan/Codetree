@@ -9,7 +9,7 @@ virus = {i: 0 for i in range(1,N+1)}
 answer = [0] * N
 # 초기 바이러스 감염자 설정
 answer[P-1] = 1
-virus[P] = 2
+virus[P] = K
 
 for time, a, b in sort_hand:
     # 첫번째 개발자가 감염자 + 전염가능횟수 남음
