@@ -25,7 +25,7 @@ for time, a, b in sort_hand:
     # 첫번째 개발자가 감염자 + 전염가능횟수 없음 -> 아무것도 안해도 됨
 
     # 두번째 개발자가 감염자 + 감염가능횟수 남음
-    elif answer[b-1] == 1 and virus[b] > 0:
+    if answer[b-1] == 1 and virus[b] > 0:
         # 첫번째 개발자가 감염당한적인 없는 경우
         if answer[a-1] == 0:
             answer[a-1] = 1
