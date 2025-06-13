@@ -23,9 +23,9 @@ for i in range(t):
             d = 'L'
         elif d == 'L':
             d = 'R'
-        elif d == 'S':
-            d = 'N'
-        elif d == 'N':
-            d = 'S'
+        elif d == 'D':
+            d = 'U'
+        elif d == 'U':
+            d = 'D'
 
 print(r, c)
