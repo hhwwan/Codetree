@@ -6,16 +6,13 @@ dx, dy = [0, 0, 1, -1], [1, -1, 0, 0]
 
 for i in range(t):
     if d == 'R':
-        dir_idx = 0
+        nx, ny = r + dx[0], c + dy[0]
     elif d == 'L':
-        dir_idx = 1
-    elif d == 'S':
-        dir_idx = 2
-    elif d == 'N':
-        dir_idx = 3
-
-    nx = r + dx[dir_idx]
-    ny = c + dy[dir_idx]
+        nx, ny = r + dx[1], c + dy[1]
+    elif d == 'D':
+        nx, ny = r + dx[2], c + dy[2]
+    elif d == 'U':
+        nx, ny = r + dx[3], c + dy[3]
     
     # 범위안에 있으면 진행
     if 1 <= nx <= n and 1 <= ny <= n:
