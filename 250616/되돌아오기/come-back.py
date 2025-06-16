@@ -10,13 +10,13 @@ found = False
 
 for i in range(N):
     for j in range(dist[i]):
-        if dir[i] == 'E': # 오른쪽
+        if dir[i] == 'N': # 위
             nx, ny = x + dx[0], y + dy[0]
-        elif dir[i] == 'N': # 위
+        elif dir[i] == 'E': # 오른쪽
             nx, ny = x + dx[1], y + dy[1]
-        elif dir[i] == 'W': # 왼쪽
-            nx, ny = x + dx[2], y + dy[2]
         elif dir[i] == 'S': # 아래
+            nx, ny = x + dx[2], y + dy[2]
+        elif dir[i] == 'W': # 왼쪽
             nx, ny = x + dx[3], y + dy[3]
         
         x, y = nx, ny
