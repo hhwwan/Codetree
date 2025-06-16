@@ -6,6 +6,7 @@ dist = [int(move[1]) for move in moves]
 dx, dy = [0, 1, 0, -1], [1, 0, -1, 0]
 x, y = 0, 0
 cnt = 0
+found = False
 
 for i in range(N):
     for j in range(dist[i]):
@@ -23,4 +24,11 @@ for i in range(N):
 
         if x == 0 and y == 0:
             print(cnt)
+            found = True
             break
+    
+    if found:
+        break
+
+if not found:
+    print(-1)
