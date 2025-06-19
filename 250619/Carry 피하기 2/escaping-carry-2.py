@@ -27,4 +27,7 @@ for i in range(n):
                 if total > max_total:
                     max_total = total
 
-print(max_total)
+if max_total:
+    print(max_total)
+else:
+    print(-1)
