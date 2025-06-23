@@ -6,24 +6,30 @@ for _ in range(n):
     x.append(int(pos))
     c.append(char)
 
-place = [0] * (max(x)+1)
+place = []
 
 # 각 위치당 점수 표시
-for i in range(len(x)):
+for i in range(n):
     if c[i] == 'G':
-        place[x[i]] = 1
+        score = 1
     elif c[i] == 'H':
-        place[x[i]] = 2
+        score = 2
+    place.append((x[i], score))
+
+place.sort()
 
 # 최대 점수 찾기
+left = 0
+right = 0
+total = 0
 max_total = 0
 
-for i in range(1, max(x) + 1 - k):
-    tmp = 0
-    for j in range(i, i + k + 1):
-        tmp += place[j]
-    
-    if max_total < tmp:
-        max_total = tmp
+for right in range(n):
+    total += place[right][1]
+    while place[right][0] - place[left][0] > k:
+        total -= place[left][1]
+        left += 1
+    if total > max_total:
+        max_total = total
 
 print(max_total)
