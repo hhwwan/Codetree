@@ -11,7 +11,7 @@ for _ in range(N):
 arr = [0] * (max(pos) + 1)
 
 for i in range(N):
-    arr[pos[i]] = candy[i]
+    arr[pos[i]] += candy[i]
 
 # c 찾기
 max_candy = 0
