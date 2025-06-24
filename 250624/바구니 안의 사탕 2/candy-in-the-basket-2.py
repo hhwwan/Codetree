@@ -16,11 +16,17 @@ for i in range(N):
 # c 찾기
 max_candy = 0
 
-for c in range(K, len(arr) - K):
+for c in range(len(arr)):
+    left = c - K
+    right = c + K
+
+    if left < 0 or right >= len(arr):
+        continue
+    
     tmp = 0
-    for j in range(c - K, c + K + 1):
+    for j in range(left, right + 1):
         tmp += arr[j]
-    if tmp > max_candy:
+    if max_candy < tmp:
         max_candy = tmp
 
 print(max_candy)
