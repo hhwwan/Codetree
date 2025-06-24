@@ -8,7 +8,7 @@ for _ in range(N):
     pos.append(p)
 
 # 위치에 사탕 채우기
-arr = [0] * (max(pos) + 1)
+arr = [0] * (max(pos) + K + 1)
 
 for i in range(N):
     arr[pos[i]] += candy[i]
@@ -16,7 +16,7 @@ for i in range(N):
 # c 찾기
 max_candy = 0
 
-for c in range(K + 1, max(pos) + 1 - K):
+for c in range(K, len(arr) - K):
     tmp = 0
     for j in range(c - K, c + K + 1):
         tmp += arr[j]
