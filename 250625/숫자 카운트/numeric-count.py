@@ -8,7 +8,7 @@ for _ in range(n):
 
 answer = 0
 
-for i in range(123, 987):
+for i in range(123, 988):
     number = str(i)
 
     # 0이 안들어가있고, 숫자 중복 x
