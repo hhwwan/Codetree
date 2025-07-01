@@ -22,7 +22,7 @@ for i in range(n):
             elif y3 == y1 and x1 == x2:
                 extent = abs(x3 - x1) * abs(y1 - y2)
         
-        triangle_distance = max(triangle_distance, extent)
+            triangle_distance = max(triangle_distance, extent)
 
 if triangle_distance:
     print(triangle_distance)
