@@ -38,9 +38,9 @@ for cheese in range(1, M+1): # 치즈 번호 순서대로
     for k in range(D):
         if m[k] != cheese:
             continue
-        if p[j] in sick_p:
-            idx = sick_p.index(p[j])
-            if t[j] < sick_t[idx]:  # 아프기 전에 먹은 것 → 문제 없음
+        if p[k] in sick_p:
+            idx = sick_p.index(p[k])
+            if t[k] < sick_t[idx]:  # 아프기 전에 먹은 것 → 문제 없음
                 continue
             else:
                 # 아프고 나서 먹은 것 → 상관 없음
