@@ -8,6 +8,17 @@ for i in range(C // (A + 1)):
     j = value // (B + 1)
     total = A_value + (B * j)
 
-    max_total = max(max_total, total)
+    if total <= C:
+        max_total = max(max_total, total)
+
+for j in range(C // (B + 1)):
+    B_value = B * j
+    value = C - B_value
+
+    i = value // (A + 1)
+    total = B_value + (A * i)
+
+    if total <= C:
+        max_total = max(max_total, total)
 
 print(max_total)
