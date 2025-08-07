@@ -16,12 +16,14 @@ for i in range(3):
 lines.append([board[i][i] for i in range(3)])
 lines.append([board[i][2 - i] for i in range(3)])
 
-cnt = 0
+answer = 0
 
 for line in lines:
-    unique_line = set(line)
+    count = {}
+    for num in line:
+        count[num] = count.get(num, 0) + 1
+    
+    if len(count) == 2 and all(v >= 1 for v in count.values()):
+        answer += 1
 
-    if len(unique_line) == 2:
-        cnt += 1
-
-print(cnt)
+print(answer)
