@@ -16,7 +16,7 @@ for i in range(3):
 lines.append([board[i][i] for i in range(3)])
 lines.append([board[i][2 - i] for i in range(3)])
 
-answer = 0
+answer = set()
 
 for line in lines:
     count = {}
@@ -24,6 +24,7 @@ for line in lines:
         count[num] = count.get(num, 0) + 1
     
     if len(count) == 2 and all(v >= 1 for v in count.values()):
-        answer += 1
+        team = tuple(sorted(count.keys()))
+        answer.add(team)
 
-print(answer)
+print(len(answer))
