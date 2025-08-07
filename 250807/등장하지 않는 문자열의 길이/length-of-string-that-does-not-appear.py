@@ -1,15 +1,17 @@
 N = int(input())
 str = input()
 
-answer = 101
-for i in range(1, N):
-    word = str[0:i]
+for length in range(1, N + 1):
+    substrings = set()
     found = False
-    for j in range(i, N - 1):
-        if j + i <= N:
-            if word == str[j:j+i]:
-                found = True
-                break
+    for j in range(N - length + 1):
+        word = str[j:j+length]
+        # word가 string안에 있다면 pass
+        if word in substrings:
+            found = True
+            break
+        # word안에 없다면 string에 추가
+        substrings.add(word)
     if not found:
-        answer = min(answer, len(word))
-print(answer)
+        print(length)
+        break
